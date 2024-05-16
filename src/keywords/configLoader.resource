@@ -8,5 +8,6 @@ ${DEFAULT_ENV}    DEVELOP
 
 *** Keywords ***
 Load Configuration
+    [Documentation]    Load configuration from yaml file
     ${ENV}    Get Environment Variable    CONFIG_FILE    ${DEFAULT_ENV}
     RETURN    &{${ENV}}

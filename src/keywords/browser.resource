@@ -1,4 +1,5 @@
 *** Settings ***
+Documentation    These are keywords for selenium browser related things
 Library           SeleniumLibrary
 
 *** Keywords ***

@@ -1,3 +1,6 @@
+*** Settings ***
+Documentation    This file contains all the locators for the Login Page including the forgot password window
+
 *** Variables ***
 
 # Login Page Elements

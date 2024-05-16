@@ -1,15 +1,16 @@
-# config.yaml
+# this  YAML file will allow me to store configuration variables
+# and to be able to run different environments dynamically
 DEVELOP:
-  base_url:
-  database_url: dev_database_url
-  secret_key: dev_secret_key
+  BASE_URL: https://dev.general-dynamics.com
+  ADMIN_USERNAME: test@hotmail.com
+  ADMIN_PASSWORD: testing123
 
 PREPROD:
-  base_url:
-  database_url: staging_database_url
-  secret_key: staging_secret_key
+  BASE_URL: https://preprod.general-dynamics.com
+  ADMIN_USERNAME: test@hotmail.com
+  ADMIN_PASSWORD: testing123
 
 PROD:
-  BASE_URL: https://facebook.com
-  USERNAME: matias.perichon@hotmail.com
-  PASSWORD: matiasp1998
+  BASE_URL: https://general-dynamics.com
+  ADMIN_USERNAME: test@hotmail.com
+  ADMIN_PASSWORD: testing123
