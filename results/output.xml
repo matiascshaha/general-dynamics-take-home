@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.10.4 on win32)" generated="2024-05-13T20:36:19.025603" rpa="false" schemaversion="5">
+<suite id="s1" name="Robot" source="C:\Users\matia\Documents\repositories\robot">
+<suite id="s1-s1" name="Robot-Test-App" source="C:\Users\matia\Documents\repositories\robot\robot-test-app">
+<suite id="s1-s1-s1" name="TestSuites" source="C:\Users\matia\Documents\repositories\robot\robot-test-app\TestSuites">
+<suite id="s1-s1-s1-s1" name="Login" source="C:\Users\matia\Documents\repositories\robot\robot-test-app\TestSuites\Login.robot">
+<test id="s1-s1-s1-s1-t1" name="Test Loading configurations" line="42">
+<kw name="Load Configuration" owner="configLoader">
+<kw name="Get Environment Variable" owner="OperatingSystem">
+<msg time="2024-05-13T20:36:19.058607" level="INFO">${ENV} = production</msg>
+<var>${ENV}</var>
+<arg>CONFIG_FILE</arg>
+<arg>${DEFAULT_ENV}</arg>
+<doc>Returns the value of an environment variable with the given name.</doc>
+<status status="PASS" start="2024-05-13T20:36:19.058607" elapsed="0.000499"/>
+</kw>
+<return>
+<value>&amp;{${ENV}}</value>
+<status status="PASS" start="2024-05-13T20:36:19.059106" elapsed="0.000000"/>
+</return>
+<msg time="2024-05-13T20:36:19.059604" level="INFO">&amp;{CONFIG} = { BASE_URL=https://facebook.com | USERNAME=matias.perichon@hotmail.com | PASSWORD=matiasp1998 }</msg>
+<var>&amp;{CONFIG}</var>
+<status status="PASS" start="2024-05-13T20:36:19.058106" elapsed="0.001498"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${CONFIG}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-13T20:36:19.060104" elapsed="0.000501"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${CONFIG}[BASE_URL]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-13T20:36:19.060605" elapsed="0.000498"/>
+</kw>
+<doc>Test that the configurations are loaded correctly</doc>
+<tag>smoke</tag>
+<status status="PASS" start="2024-05-13T20:36:19.057104" elapsed="0.003999"/>
+</test>
+<status status="PASS" start="2024-05-13T20:36:19.048106" elapsed="0.013497"/>
+</suite>
+<status status="PASS" start="2024-05-13T20:36:19.046609" elapsed="0.015995"/>
+</suite>
+<status status="PASS" start="2024-05-13T20:36:19.045605" elapsed="0.017999"/>
+</suite>
+<status status="PASS" start="2024-05-13T20:36:19.028604" elapsed="0.036002"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">smoke</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Robot">Robot</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Robot-Test-App">Robot.Robot-Test-App</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="TestSuites">Robot.Robot-Test-App.TestSuites</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1-s1" name="Login">Robot.Robot-Test-App.TestSuites.Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

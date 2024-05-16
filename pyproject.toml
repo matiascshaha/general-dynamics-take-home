@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "testing-project"
+version = "0.1.0"
+description = ""
+authors = ["Matias Perichon <matias.perichon@hotmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+robotframework = "^7.0"
+robotframework-browser = "^18.4.0"
+robotframework-requests = "^0.9.7"
+pyyaml = "^6.0.1"
+robotframework-seleniumlibrary = "^6.3.0"
+allure-robotframework = "^2.13.5"
+robotframework-imaplibrary = "^0.3.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
