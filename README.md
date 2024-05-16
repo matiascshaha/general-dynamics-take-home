@@ -13,6 +13,7 @@ To integrate these tests into a larger test suite for the full application, I wo
 - **Code Formatting**: Utilize auto-linting tools like `black` to format code according to PEP 8 industry standards.
 - **Reporting**: Integrate Allure reporting to generate detailed test reports for analysis and debugging.
 - **Continuous Integration**: Integrate tests into CI/CD pipelines to ensure automated testing on code changes.
+- **Tools**: use tools like selenium IDE to grab locators for the webdriver or Playwright inspector which is a built in tool with playwright that would help with finding element locators as well.
 
 ## Project Structure
 
