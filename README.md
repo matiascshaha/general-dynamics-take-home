@@ -8,9 +8,9 @@ The test cases written in Robot syntax can be found in the `TestSuites/Login.rob
 
 To integrate these tests into a larger test suite for the full application, I would ensure that reusable functions are general enough to be used by other developers for various use cases, promoting adaptability. Key steps include:
 
-- **Modular Design**: Break down tests into reusable keywords and resource files that can be shared across different test suites.
+- **Reusability**: Break down tests into reusable methods that can be shared across different test suites.
 - **Documentation**: Auto-generate documentation to make test files clear and easy to understand, facilitating ease of use and scalability. Use `libdoc` for Robot Framework to generate documentation (e.g., `libdoc path/to/your/resourcefile.resource output/documentation.html`).
-- **Adopt Standards**: Utilize auto-linting tools like `black` to format code according to PEP 8 industry standards.
+- **Code Formatting**: Utilize auto-linting tools like `black` to format code according to PEP 8 industry standards.
 - **Reporting**: Integrate Allure reporting to generate detailed test reports for analysis and debugging.
 - **Continuous Integration**: Integrate tests into CI/CD pipelines to ensure automated testing on code changes.
 
@@ -19,41 +19,42 @@ To integrate these tests into a larger test suite for the full application, I wo
 The project structure is organized as follows:
 
 ```plaintext
+# Project Structure
+
 📦 general-dynamics-take-home
  ┣ 📂 results
- ┃ ┣ 📜 log.html
- ┃ ┣ 📜 output.xml
- ┃ ┗ 📜 report.html
+ ┃ ┣ 📜 log.html            # Execution log in HTML format
+ ┃ ┣ 📜 output.xml          # Output file with execution details
+ ┃ ┗ 📜 report.html         # Test execution report
  ┣ 📂 src
  ┃ ┣ 📂 keywords
- ┃ ┃ ┣ 📂 PageObject
- ┃ ┃ ┃ ┣ 📂 Locators
- ┃ ┃ ┃ ┃ ┣ 📜 HomeLocators.resource
- ┃ ┃ ┃ ┃ ┗ 📜 LoginLocators.resource
- ┃ ┃ ┃ ┣ 📜 HomePage.resource
- ┃ ┃ ┃ ┗ 📜 LoginPage.resource
- ┃ ┃ ┣ 📜 allure.resource
- ┃ ┃ ┣ 📜 browser.resource
- ┃ ┃ ┗ 📜 configLoader.resource
+ ┃ ┃ ┣ 📂 PageObject        # Page Object Model (POM) implementations
+ ┃ ┃ ┃ ┣ 📂 Locators        # Element locators for pages
+ ┃ ┃ ┃ ┃ ┣ 📜 HomeLocators.resource    # Locators for Home Page
+ ┃ ┃ ┃ ┃ ┗ 📜 LoginLocators.resource   # Locators for Login Page
+ ┃ ┃ ┃ ┣ 📜 HomePage.resource          # Keywords for Home Page actions
+ ┃ ┃ ┃ ┗ 📜 LoginPage.resource         # Keywords for Login Page actions
+ ┃ ┃ ┣ 📜 allure.resource   # Allure report integration
+ ┃ ┃ ┣ 📜 browser.resource  # Browser-related keywords
+ ┃ ┃ ┗ 📜 configLoader.resource  # Configuration loader keywords
  ┃ ┣ 📂 output
- ┃ ┃ ┣ 📂 allure
- ┃ ┃ ┃ ┗ Various allure report files
- ┃ ┃ ┗ 📂 assets
- ┃ ┃ ┃ ┗ 📜 suite_failed_screenshot.png
+ ┃ ┃ ┣ 📂 allure             # Allure report files
+ ┃ ┃ ┗ 📂 assets            # Additional assets (e.g., screenshots)
+ ┃ ┃ ┃ ┗ 📜 suite_failed_screenshot.png  # Screenshot for failed test suite
  ┃ ┣ 📂 TestSuites
- ┃ ┃ ┣ 📜 Login.robot
- ┃ ┃ ┗ 📜 __init__.py
- ┃ ┗ 📜 config.yaml
- ┣ 📜 .gitignore
- ┣ 📜 poetry.lock
- ┗ 📜 pyproject.toml
+ ┃ ┃ ┣ 📜 Login.robot       # Test cases for login functionality
+ ┃ ┃ ┗ 📜 __init__.py       # Initialization file for test suite
+ ┃ ┗ 📜 config.yaml         # Configuration file for test execution
+ ┣ 📜 .gitignore            # Specifies files and directories to ignore in git
+ ┣ 📜 poetry.lock           # Dependency lock file managed by Poetry
+ ┗ 📜 pyproject.toml        # Project configuration file for Poetry
 ```
 
 ## Features
 
 - **Login Functionality Tests**: Tests for successful login, invalid login attempts, and remember me functionality.
 - **Forgot Password Tests**: Tests for forgot password functionality, including valid and invalid email addresses.
-- **Validation Tests**: Ensures the presence of essential elements on the login and forgot password pages.
+- **Smoke Tests**: Ensures the presence of essential elements on the login and forgot password pages.
 - **Allure Reporting**: Generates detailed reports for test runs.
 
 ## Test Cases
